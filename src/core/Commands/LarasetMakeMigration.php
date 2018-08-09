@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Author : Anas EL ALAMI [anaselalamikh@gmail.com]
+ * github : khofaai
+ */
 namespace Khofaai\Laraset\core\Commands;
 
 use Khofaai\Laraset\core\Facades\Laraset;
@@ -12,7 +15,7 @@ class LarasetMakeMigration extends LarasetCommands
      * @var string
      */
     protected $signature = 'laraset:make:migration 
-	{name : migration name}';
+    {name : migration name}';
 
     /**
      * The console command description.
@@ -56,6 +59,7 @@ class LarasetMakeMigration extends LarasetCommands
         }
         $this->_construct();
         $modulePath = Laraset::modulePath($this->selectedModule);
+
         if (!class_exists_in_directory($modulePath . '/Database/Migrations/', $this->className)) {
             $migration_class = date('Y_m_d_his') . '_create_' . $this->moduleName . '_table.php';
             $content = str_replace(

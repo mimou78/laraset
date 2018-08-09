@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Author : Anas EL ALAMI [anaselalamikh@gmail.com]
+ * github : khofaai
+ */
 namespace Khofaai\Laraset\core\Facades;
 
 use Illuminate\Support\Facades\Facade;
@@ -88,7 +91,7 @@ class Laraset extends Facade
      * @param string $moduleName
      * @return boolean
      */
-    public function moduleExists($moduleName)
+    public static function moduleExists($moduleName)
     {
         return module_exists($moduleName);
     }
@@ -99,7 +102,7 @@ class Laraset extends Facade
      * @param string $moduleName
      * @return string
      */
-    public function modulePath($moduleName)
+    public static function modulePath($moduleName)
     {
         return module_path($moduleName);
     }
@@ -112,7 +115,7 @@ class Laraset extends Facade
      * @param string $subpath
      * @return array
      */
-    public function dirStructure($path = null, $subdir = '', $subpath = '')
+    public static function dirStructure($path = null, $subdir = '', $subpath = '')
     {
         return dir_structure($path = null, $subdir, $subpath);
     }
@@ -123,7 +126,7 @@ class Laraset extends Facade
      * @param string $filepath
      * @return string
      */
-    public function getFilePhpClasses($filepath)
+    public static function getFilePhpClasses($filepath)
     {
         return file_get_php_classes($filepath);
     }
